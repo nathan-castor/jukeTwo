@@ -1,0 +1,15 @@
+<h1>Simple Angular Auth</h1>
+
+<input type="text" ng-model="main.name" placeholder="name"><br>
+<input type="password" ng-model="main.password" placeholder="password"><br>
+<br>
+
+<button ng-click="main.register()">Register</button>
+<button ng-click="main.login()">Login</button>
+<button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+
+<button ng-click="main.getUsers()">get users list</button>
+<br><br>
+{{main.message}}
+
+<br><br><br>

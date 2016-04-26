@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPA!</title>
+
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+	<!-- DOWNLOADED LIBRARIES -->
+	<script src="/js/angular.js"></script>
+	<script src="/js/angular-ui-router.js"></script>
+
+	<!-- ANGULAR APP -->
+	<script src="/js/app.js"></script>
+	<!-- <script src="/js/stockCtrl.js"></script> -->
+	<!-- <script src="/js/stockService.js"></script> -->
+	<script src="/js/mainCtrl.js"></script>
+	<!-- <script src="/js/detailCtrl.js"></script> -->
+
+</head>
+<body ng-app="meanStack" ng-controller="Montroller as main">
+
+<!-- bootstrap nav bar -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+				<a class="navbar-brand" ui-sref="home">Home</a>
+	    </div>
+	      <ul class="nav navbar-nav navbar-right">
+					<li><a ui-sref="users">Users/Portfolio</a></li>
+					<li ng-if="!main.isAuthed()">
+						<a ui-sref="login">Log In</a>
+					</li>
+					<li ng-if="main.isAuthed()">
+						<a ng-click="global.logout()">Log Out</a>
+					</li>
+	      </ul>
+	  </div>
+	</nav>
+
+	<!-- materialize nav bar -->
+	<!-- <nav>
+    <div class="nav-wrapper #0d47a1 blue darken-4">
+      <a ui-sref="home" class="brand-logo">SPA!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="users">Users</a></li>
+        <li><a ui-sref="newUser">Create User</a></li>
+      </ul>
+    </div>
+  </nav> -->
+
+	<div class="container">
+		<div ui-view></div>
+	</div>
+</body>
+</html>
